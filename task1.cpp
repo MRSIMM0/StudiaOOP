@@ -7,7 +7,6 @@ class Car{
         int year;
         int millage;
         string millageUnit = "km";
-        
         virtual void carDetails(){};
 };
 
