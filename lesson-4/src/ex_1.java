@@ -72,7 +72,7 @@ class Circle implements Shape {
 
     @Override
     public Circle rotatedShape(float deg) {
-        
+
         return new Circle(positionX, positionY, deg, isFlipped);
     }
 
