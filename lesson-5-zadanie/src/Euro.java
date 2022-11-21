@@ -14,7 +14,7 @@ public class Euro implements Currency {
     @Override
     public Euro addedCurrency(float value, String currency) {
         try{
-            return new Euro(this.balance * rates.get(currency) + value,this.rates);
+            return new Euro(this.balance +  (rates.get(currency) * value),this.rates);
         }catch (NullPointerException e){
             System.out.println("No such currency");
             return this;
@@ -31,7 +31,6 @@ public class Euro implements Currency {
                 System.out.println("Operation cannot be executed ");
                 return this;
             }
-
             return new Euro(subtraction, this.rates);
 
 

@@ -2,15 +2,16 @@ public class Main {
   public static void main(String[] args) {
 
     FakeCantor fakeCantor = new FakeCantor();
-    Euro euro = new Euro(10,fakeCantor.euroToRates());
+    Euro euro = new Euro(100,fakeCantor.euroToRates());
 
     System.out.println(euro.balance());
 
-    euro = euro.addedCurrency(10,"GBP");
+    euro = euro.addedCurrency(10,"USD");
 
     System.out.println(euro.balance());
 
-    euro = euro.subtractedCurrency(2,"USD");
+    euro = euro.subtractedCurrency(1000,"GBP");
+
 
     System.out.println(euro.balance());
 
@@ -19,6 +20,7 @@ public class Main {
     System.out.println(euro.symbol());
 
     System.out.println(euro.toDollarExchangeRate());
+
 
 
   // TODO: showcase example of usage
