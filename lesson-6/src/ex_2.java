@@ -4,25 +4,30 @@ interface Number{
 
 class Logarithm implements Number {
 
-    private double base, argument;
+    private final double base, argument;
+
+    private void validateBase(double base){
+        if(base == 1.0){
+            throw new IllegalArgumentException("Base should not be equal to 1");
+        }
+
+        if(base <=0.0){
+            throw new IllegalArgumentException("Base should be greater than 0");
+        }
+    }
+
+    private void validateArgument(double argument){
+        if(argument <=0){
+            throw new IllegalArgumentException("Argument should be greater than 0");
+        }
+    }
 
 
     @Override
     public double doubleValue() throws IllegalArgumentException {
 
-
-
-        if(base == 1){
-            throw new IllegalArgumentException("Base should not be equal to 1");
-        }
-
-        if(base <=0){
-            throw new IllegalArgumentException("Base should be greater than 0");
-        }
-
-        if(argument <=0){
-            throw new IllegalArgumentException("Argument should be greater than 0");
-        }
+        validateBase(base);
+        validateArgument(argument);
 
         return Math.log(this.argument)/Math.log(this.base);
 
